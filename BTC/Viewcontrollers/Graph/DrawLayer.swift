@@ -51,7 +51,7 @@ class DrawLayer {
         graphLayer.strokeColor = foregroundColor.cgColor
         graphLayer.lineWidth = lineWidth
         graphLayer.fillColor = UIColor.clear.cgColor
-        graphLayer.strokeEnd = 0
+        graphLayer.strokeEnd = 1
         parentLayer.update = {
             graphLayer.strokeEnd = CGFloat(parentLayer.fractionComplete)
         }
@@ -59,24 +59,32 @@ class DrawLayer {
     }
     
     
-    func drawXAxisLayer(data: AxisData) -> CALayer {
-        let xAxisLayer = CALayer()
+    func drawXAxisLayer(data: AxisData) -> AnimatedLayer {
+        let xAxisLayer = AnimatedLayer()
         xAxisLayer.frame = bounds.applying(CGAffineTransform(translationX: -inset/2, y: -inset/3))
         let xAxisLinesLayer = drawLinesLayer(data: data, axis: .x)
         xAxisLayer.addSublayer(xAxisLinesLayer)
         let xAxisLabelLayer = labelsX(data: data)
         xAxisLayer.addSublayer(xAxisLabelLayer)
+        xAxisLayer.update = {
+            xAxisLinesLayer.opacity = Float(xAxisLayer.fractionComplete)
+            xAxisLabelLayer.opacity = Float(xAxisLayer.fractionComplete)
+        }
         return xAxisLayer
         
     }
     
-    func drawYAxisLayer(data: AxisData) -> CALayer {
-        let axisYLayer = CALayer()
+    func drawYAxisLayer(data: AxisData) -> AnimatedLayer {
+        let axisYLayer = AnimatedLayer()
         axisYLayer.frame = bounds.applying(CGAffineTransform(translationX: -inset/2, y: -inset/3))
         let axisYLinesLayer = drawLinesLayer(data: data, axis: .y)
         axisYLayer.addSublayer(axisYLinesLayer)
         let axisYLabelLayer = labelsY(data: data)
         axisYLayer.addSublayer(axisYLabelLayer)
+        axisYLayer.update = {
+            axisYLinesLayer.opacity = Float(axisYLayer.fractionComplete)
+            axisYLabelLayer.opacity = Float(axisYLayer.fractionComplete)
+        }
         return axisYLayer
     }
     

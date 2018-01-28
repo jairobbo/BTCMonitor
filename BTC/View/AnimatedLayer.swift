@@ -9,7 +9,7 @@
 import UIKit
 
 class AnimatedLayer: CALayer, Animated {
-    var fractionComplete: Double = 0 {
+    var fractionComplete: Double = 1 {
         didSet {
             update()
         }
@@ -17,7 +17,8 @@ class AnimatedLayer: CALayer, Animated {
     var update: () -> Void = {}
     
     func animate(duration: TimeInterval) {
-        let delta = 1/duration * 60
+        fractionComplete = 0
+        let delta = 1/(duration * 60)
         let timer = Timer.scheduledTimer(withTimeInterval: 1/60, repeats: true) { (timer) in
             self.fractionComplete += delta
             if self.fractionComplete >= 1 {

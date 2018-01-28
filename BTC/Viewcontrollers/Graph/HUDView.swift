@@ -49,7 +49,7 @@ class HUDView: UIView {
         let circlePath = UIBezierPath(arcCenter: point, radius: 4, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
         linePath.append(circlePath)
         graphicLayer.path = linePath.cgPath
-        graphicLayer.lineWidth = 0.5
+        graphicLayer.lineWidth = 0.25
         graphicLayer.strokeColor = UIColor.white.cgColor
         graphicLayer.fillColor = UIColor.white.cgColor
         amountTextLayer.string = currentAmount

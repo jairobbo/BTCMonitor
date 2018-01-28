@@ -18,25 +18,59 @@ class GraphView: UIView {
     private var blurAnimator = UIViewPropertyAnimator()
     private var hudAnimator = UIViewPropertyAnimator()
     
-    var graphLayer = AnimatedLayer()
-    var axisXLayer = CALayer()
-    var axisYLayer = CALayer()
+    private var graphLayer = AnimatedLayer()
+    private var axisXLayer = AnimatedLayer()
+    private var axisYLayer = AnimatedLayer()
+    
+    private let activityIndicator: UIActivityIndicatorView = {
+        let act = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
+        act.hidesWhenStopped = true
+        return act
+    }()
     
     var gradientColor1 = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
     var gradientColor2 = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
     
-    var inset: CGFloat = 30
+    var inset: CGFloat = 30 // be carefull, also change in DrawLayer!
     
-    var is3DTouchAvailable: Bool {
+    private var is3DTouchAvailable: Bool {
         return traitCollection.forceTouchCapability == .available
     }
     
-    
-    init(frame: CGRect, model: GraphModel) {
-        super.init(frame: frame)
-        self.model = model
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         
-        addGraphLayers()
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = [gradientColor1.cgColor, gradientColor2.cgColor]
+        layer.addSublayer(gradientLayer)
+        
+        layer.cornerRadius = 10
+        layer.masksToBounds = true
+        
+        addSubview(activityIndicator)
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: bounds.width / 3, height: bounds.width / 3)
+        activityIndicator.center = CGPoint(x: bounds.width/2, y: bounds.height/2)
+        activityIndicator.startAnimating()
+        
+    }
+    
+    override func didMoveToSuperview() {
+        
+    }
+    
+    func initWithModel(model: GraphModel) {
+        self.model = model
+        self.drawLayer = DrawLayer(bounds: bounds)
+        
+        activityIndicator.stopAnimating()
+        
+        graphLayer = drawLayer!.drawGraphLayer(data: model.graphData, lineWidth: 1)
+        layer.addSublayer(graphLayer)
+        axisXLayer = drawLayer!.drawXAxisLayer(data: model.axisXData)
+        layer.addSublayer(axisXLayer)
+        axisYLayer = drawLayer!.drawYAxisLayer(data: model.axisYData)
+        layer.addSublayer(axisYLayer)
         
         blurView.frame = bounds
         blurView.effect = nil
@@ -56,25 +90,9 @@ class GraphView: UIView {
             self.hudView?.alpha = 1
         })
         
-        graphLayer.animate(duration: 2)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func addGraphLayers() {
-        self.drawLayer = DrawLayer(bounds: bounds)
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = bounds
-        gradientLayer.colors = [gradientColor1.cgColor, gradientColor2.cgColor]
-        layer.addSublayer(gradientLayer)
-        graphLayer = drawLayer!.drawGraphLayer(data: model!.graphData, lineWidth: 1)
-        layer.addSublayer(graphLayer)
-        axisXLayer = drawLayer!.drawXAxisLayer(data: model!.axisXData)
-        layer.addSublayer(axisXLayer)
-        axisYLayer = drawLayer!.drawYAxisLayer(data: model!.axisYData)
-        layer.addSublayer(axisYLayer)
+        graphLayer.animate(duration: 1)
+        axisXLayer.animate(duration: 0.2)
+        axisYLayer.animate(duration: 0.2)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
