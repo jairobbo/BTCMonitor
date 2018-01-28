@@ -32,4 +32,5 @@ class AnimatedLayer: CALayer, Animated {
 
 protocol Animated {
     var fractionComplete: Double { get set }
+    func animate(duration: TimeInterval)
 }

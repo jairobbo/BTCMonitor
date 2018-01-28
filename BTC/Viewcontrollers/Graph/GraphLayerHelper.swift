@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DrawLayer {
+class GraphLayerHelper {
     
     private enum Axis {
         case x

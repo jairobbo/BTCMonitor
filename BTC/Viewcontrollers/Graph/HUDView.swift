@@ -10,7 +10,7 @@ import UIKit
 
 class HUDView: UIView {
     
-    var drawLayer: DrawLayer?
+    var drawLayer: GraphLayerHelper?
     
     var graphLineLayer = CALayer()
     var graphicLayer = CAShapeLayer()
@@ -24,7 +24,7 @@ class HUDView: UIView {
 
     init(frame: CGRect, model: GraphModel) {
         super.init(frame: frame)
-        drawLayer = DrawLayer(bounds: bounds)
+        drawLayer = GraphLayerHelper(bounds: bounds)
         graphLineLayer = drawLayer!.drawGraphLayer(data: model.graphData, lineWidth: 2)
         graphicLayer.frame = bounds
         updateGraphics()
@@ -48,12 +48,12 @@ class HUDView: UIView {
         let point = CGPoint(x: actionCoordinate.0 * bounds.width, y: actionCoordinate.1 * bounds.height)
         let circlePath = UIBezierPath(arcCenter: point, radius: 4, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
         linePath.append(circlePath)
+        
         graphicLayer.path = linePath.cgPath
+        
         graphicLayer.lineWidth = 0.25
         graphicLayer.strokeColor = UIColor.white.cgColor
         graphicLayer.fillColor = UIColor.white.cgColor
         amountTextLayer.string = currentAmount
     }
-    
-    
 }

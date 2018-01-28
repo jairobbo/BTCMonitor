@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F0431D7201CE4FD0025E810 /* DrawLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0431D6201CE4FD0025E810 /* DrawLayer.swift */; };
+		2F0431D7201CE4FD0025E810 /* GraphLayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0431D6201CE4FD0025E810 /* GraphLayerHelper.swift */; };
 		2F0431D9201CEED10025E810 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0431D8201CEED10025E810 /* HUDView.swift */; };
 		2F0431DC201E15670025E810 /* AnimatedLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0431DB201E15670025E810 /* AnimatedLayer.swift */; };
+		2F08FECD201E5C79009FEAE9 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FECC201E5C79009FEAE9 /* GradientView.swift */; };
+		2F08FECF201E5FAA009FEAE9 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FECE201E5FAA009FEAE9 /* GraphView.swift */; };
 		2FD21F70201A5F33002E4FD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F6F201A5F33002E4FD8 /* AppDelegate.swift */; };
 		2FD21F72201A5F33002E4FD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F71201A5F33002E4FD8 /* ViewController.swift */; };
 		2FD21F75201A5F33002E4FD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD21F73201A5F33002E4FD8 /* Main.storyboard */; };
@@ -17,14 +19,16 @@
 		2FD21F7A201A5F33002E4FD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD21F78201A5F33002E4FD8 /* LaunchScreen.storyboard */; };
 		2FD21F82201A5F6D002E4FD8 /* AlphaVantage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F81201A5F6D002E4FD8 /* AlphaVantage.swift */; };
 		2FD21F84201A6223002E4FD8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F83201A6223002E4FD8 /* TableViewController.swift */; };
-		2FD21F87201B7A14002E4FD8 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F86201B7A14002E4FD8 /* GraphView.swift */; };
+		2FD21F87201B7A14002E4FD8 /* InteractiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F86201B7A14002E4FD8 /* InteractiveView.swift */; };
 		2FD21F8A201B7F17002E4FD8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F89201B7F17002E4FD8 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F0431D6201CE4FD0025E810 /* DrawLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawLayer.swift; sourceTree = "<group>"; };
+		2F0431D6201CE4FD0025E810 /* GraphLayerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphLayerHelper.swift; sourceTree = "<group>"; };
 		2F0431D8201CEED10025E810 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		2F0431DB201E15670025E810 /* AnimatedLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedLayer.swift; sourceTree = "<group>"; };
+		2F08FECC201E5C79009FEAE9 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		2F08FECE201E5FAA009FEAE9 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		2FD21F6C201A5F33002E4FD8 /* BTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD21F6F201A5F33002E4FD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD21F71201A5F33002E4FD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,7 +38,7 @@
 		2FD21F7B201A5F33002E4FD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FD21F81201A5F6D002E4FD8 /* AlphaVantage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaVantage.swift; sourceTree = "<group>"; };
 		2FD21F83201A6223002E4FD8 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		2FD21F86201B7A14002E4FD8 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		2FD21F86201B7A14002E4FD8 /* InteractiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveView.swift; sourceTree = "<group>"; };
 		2FD21F89201B7F17002E4FD8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				2F0431DB201E15670025E810 /* AnimatedLayer.swift */,
+				2F08FECC201E5C79009FEAE9 /* GradientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -60,9 +65,10 @@
 		2F08FECB201E4D89009FEAE9 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
-				2FD21F86201B7A14002E4FD8 /* GraphView.swift */,
-				2F0431D6201CE4FD0025E810 /* DrawLayer.swift */,
+				2FD21F86201B7A14002E4FD8 /* InteractiveView.swift */,
+				2F0431D6201CE4FD0025E810 /* GraphLayerHelper.swift */,
 				2F0431D8201CEED10025E810 /* HUDView.swift */,
+				2F08FECE201E5FAA009FEAE9 /* GraphView.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -198,8 +204,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FD21F72201A5F33002E4FD8 /* ViewController.swift in Sources */,
-				2FD21F87201B7A14002E4FD8 /* GraphView.swift in Sources */,
-				2F0431D7201CE4FD0025E810 /* DrawLayer.swift in Sources */,
+				2FD21F87201B7A14002E4FD8 /* InteractiveView.swift in Sources */,
+				2F08FECD201E5C79009FEAE9 /* GradientView.swift in Sources */,
+				2F08FECF201E5FAA009FEAE9 /* GraphView.swift in Sources */,
+				2F0431D7201CE4FD0025E810 /* GraphLayerHelper.swift in Sources */,
 				2FD21F82201A5F6D002E4FD8 /* AlphaVantage.swift in Sources */,
 				2F0431DC201E15670025E810 /* AnimatedLayer.swift in Sources */,
 				2F0431D9201CEED10025E810 /* HUDView.swift in Sources */,
