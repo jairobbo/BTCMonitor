@@ -13,6 +13,7 @@
 		2F08FECD201E5C79009FEAE9 /* GradientControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FECC201E5C79009FEAE9 /* GradientControl.swift */; };
 		2F08FECF201E5FAA009FEAE9 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FECE201E5FAA009FEAE9 /* GraphView.swift */; };
 		2F08FED1201F2B22009FEAE9 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FED0201F2B22009FEAE9 /* TextView.swift */; };
+		2F08FED3201F360C009FEAE9 /* VerticalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FED2201F360C009FEAE9 /* VerticalScrollView.swift */; };
 		2FD21F70201A5F33002E4FD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F6F201A5F33002E4FD8 /* AppDelegate.swift */; };
 		2FD21F72201A5F33002E4FD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F71201A5F33002E4FD8 /* ViewController.swift */; };
 		2FD21F75201A5F33002E4FD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD21F73201A5F33002E4FD8 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		2F08FECC201E5C79009FEAE9 /* GradientControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientControl.swift; sourceTree = "<group>"; };
 		2F08FECE201E5FAA009FEAE9 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		2F08FED0201F2B22009FEAE9 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		2F08FED2201F360C009FEAE9 /* VerticalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalScrollView.swift; sourceTree = "<group>"; };
 		2FD21F6C201A5F33002E4FD8 /* BTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD21F6F201A5F33002E4FD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD21F71201A5F33002E4FD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				2F0431DB201E15670025E810 /* AnimatedLayer.swift */,
 				2F08FECC201E5C79009FEAE9 /* GradientControl.swift */,
 				2F08FED0201F2B22009FEAE9 /* TextView.swift */,
+				2F08FED2201F360C009FEAE9 /* VerticalScrollView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				2FD21F8A201B7F17002E4FD8 /* Model.swift in Sources */,
 				2F08FED1201F2B22009FEAE9 /* TextView.swift in Sources */,
 				2FD21F70201A5F33002E4FD8 /* AppDelegate.swift in Sources */,
+				2F08FED3201F360C009FEAE9 /* VerticalScrollView.swift in Sources */,
 				2FD21F84201A6223002E4FD8 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

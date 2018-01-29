@@ -19,34 +19,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGl-mG-IO2" customClass="InteractiveView" customModule="BTC" customModuleProvider="target">
-                                <rect key="frame" x="16" y="130" width="343" height="257.5"/>
-                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3i-7T-ycc" customClass="VerticalScrollView" customModule="BTC" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGl-mG-IO2" customClass="InteractiveView" customModule="BTC" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="100" width="335" height="251.5"/>
+                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="kGl-mG-IO2" secondAttribute="height" multiplier="4:3" id="oED-fB-kxA"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILr-uK-7z6" customClass="TextView" customModule="BTC" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="335" height="60"/>
+                                        <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="qYS-E2-THk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="kGl-mG-IO2" secondAttribute="height" multiplier="4:3" id="oED-fB-kxA"/>
+                                    <constraint firstItem="kGl-mG-IO2" firstAttribute="leading" secondItem="e3i-7T-ycc" secondAttribute="leading" constant="20" id="4r4-C4-7nT"/>
+                                    <constraint firstItem="ILr-uK-7z6" firstAttribute="top" secondItem="e3i-7T-ycc" secondAttribute="top" constant="20" id="KeP-W5-frq"/>
+                                    <constraint firstItem="kGl-mG-IO2" firstAttribute="top" secondItem="ILr-uK-7z6" secondAttribute="bottom" constant="20" id="OIP-y2-bFf"/>
+                                    <constraint firstItem="kGl-mG-IO2" firstAttribute="leading" secondItem="ILr-uK-7z6" secondAttribute="leading" id="bbW-Lw-kWS"/>
+                                    <constraint firstItem="kGl-mG-IO2" firstAttribute="centerX" secondItem="e3i-7T-ycc" secondAttribute="centerX" id="dRS-jL-s8b"/>
+                                    <constraint firstItem="kGl-mG-IO2" firstAttribute="trailing" secondItem="ILr-uK-7z6" secondAttribute="trailing" id="ePa-rH-p7c"/>
+                                    <constraint firstAttribute="trailing" secondItem="kGl-mG-IO2" secondAttribute="trailing" constant="20" id="t9t-4M-3uP"/>
+                                    <constraint firstAttribute="bottom" secondItem="kGl-mG-IO2" secondAttribute="bottom" constant="144.5" id="uFV-vd-on4"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILr-uK-7z6" customClass="TextView" customModule="BTC" customModuleProvider="target">
-                                <rect key="frame" x="16" y="50" width="343" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="qYS-E2-THk"/>
-                                </constraints>
-                            </view>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kGl-mG-IO2" firstAttribute="top" secondItem="ILr-uK-7z6" secondAttribute="bottom" constant="20" id="2J5-ra-2mp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kGl-mG-IO2" secondAttribute="trailing" constant="16" id="KnD-pa-e6d"/>
-                            <constraint firstItem="ILr-uK-7z6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="U0f-Qh-TsD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ILr-uK-7z6" secondAttribute="trailing" constant="16" id="bVa-Vo-opk"/>
-                            <constraint firstItem="ILr-uK-7z6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="d4g-PG-lg1"/>
-                            <constraint firstItem="kGl-mG-IO2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="k6I-H9-TWV"/>
+                            <constraint firstItem="e3i-7T-ycc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DrO-t7-i3H"/>
+                            <constraint firstItem="e3i-7T-ycc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="YaJ-Xv-HE3"/>
+                            <constraint firstAttribute="trailing" secondItem="e3i-7T-ycc" secondAttribute="trailing" id="e4a-Hg-VO2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e3i-7T-ycc" secondAttribute="bottom" id="lAj-Hb-xLA"/>
+                            <constraint firstItem="e3i-7T-ycc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="y2k-dX-wmM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="interactiveView" destination="kGl-mG-IO2" id="c7j-zH-HGl"/>
+                        <outlet property="scrollView" destination="e3i-7T-ycc" id="lb6-JB-kkx"/>
                         <outlet property="textView" destination="ILr-uK-7z6" id="qcJ-NY-MTk"/>
                     </connections>
                 </viewController>

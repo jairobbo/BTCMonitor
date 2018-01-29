@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var textView: TextView!
     @IBOutlet weak var interactiveView: InteractiveView!
+    @IBOutlet weak var scrollView: VerticalScrollView!
     
     var graphView: GraphView?
     var hudView: HUDView?
+    var refreshControl = UIRefreshControl()
     
     let alpha = AlphaVantage()
     
@@ -23,7 +25,20 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognize
         
         view.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         textView.setText(text: "Bitcoin Monitor")
-                
+        refreshControl.tintColor = UIColor.white.withAlphaComponent(0.5)
+        refreshControl.addTarget(self, action: #selector(load), for: UIControlEvents.valueChanged)
+        scrollView.refreshControl = refreshControl
+        
+        load()
+    }
+    
+    @objc func load() {
+        refreshControl.endRefreshing()
+        interactiveView.contentView.subviews.first?.removeFromSuperview()
+        interactiveView.hudViewContainer.subviews.first?.removeFromSuperview()
+        if !interactiveView.activityIndicator.isAnimating {
+            interactiveView.activityIndicator.startAnimating()
+        }
         alpha.getBTCData { (model) in
             self.graphView = GraphView(frame: self.interactiveView.bounds, model: model!)
             self.interactiveView.contentView.addSubview(self.graphView!)
@@ -34,6 +49,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognize
             self.graphView?.startAnimation()
         }
     }
-
+    
 }
+
 
