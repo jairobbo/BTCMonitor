@@ -29,18 +29,17 @@ class InteractiveView: GradientControl {
     
     private var is3DTouchAvailable: Bool {
         return traitCollection.forceTouchCapability == .available
-    }
+    } 
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    
-    
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         contentView.frame = bounds
+        print(bounds)
+//        contentView.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         addSubview(contentView)
         
         activityIndicator.frame = CGRect(x: 0, y: 0, width: bounds.width / 3, height: bounds.width / 3)
@@ -54,6 +53,8 @@ class InteractiveView: GradientControl {
         addSubview(blurView)
         
         hudViewContainer.frame = bounds
+        print(bounds)
+//        hudViewContainer.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
         hudViewContainer.alpha = 0
         addSubview(hudViewContainer)
         
