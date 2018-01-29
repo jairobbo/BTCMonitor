@@ -10,25 +10,26 @@ import UIKit
 
 class HUDView: UIView {
     
-    var model: GraphModel?
-    var drawLayer: GraphLayerHelper?
+    private var model: GraphModel?
+    private var drawLayer: GraphLayerHelper?
     
-    var graphLineLayer = CALayer()
-    var graphicLayer: CAShapeLayer = {
+    private var graphLineLayer = CALayer()
+    private var graphicLayer: CAShapeLayer = {
         let graphicLayer = CAShapeLayer()
         graphicLayer.lineWidth = 0.25
         graphicLayer.strokeColor = UIColor.white.cgColor
         graphicLayer.fillColor = UIColor.white.cgColor
         return graphicLayer
     }()
-    var amountTextLayer = CATextLayer()
+    private var amountTextLayer = CATextLayer()
     
-    var interactionPoint = CGPoint() {
+    private var interactionPoint = CGPoint() {
         didSet {
             updateHUD()
         }
     }
-    var currentAmountString = ""
+    private var currentAmountString = ""
+    
     var inset: CGFloat = 30
 
     init(frame: CGRect, model: GraphModel) {
@@ -68,12 +69,12 @@ class HUDView: UIView {
         currentAmountString = numberFormatter.string(from: amountNumber) ?? ""
     }
     
-    func updateHUD() {
+    private func updateHUD() {
         graphicLayer.path = drawPath().cgPath
         amountTextLayer.string = currentAmountString
     }
     
-    func drawPath() -> UIBezierPath {
+    private func drawPath() -> UIBezierPath {
         let linePath = UIBezierPath()
         linePath.move(to: CGPoint(x: interactionPoint.x * bounds.width, y: 0))
         linePath.addLine(to: CGPoint(x: interactionPoint.x * bounds.width, y: bounds.height))

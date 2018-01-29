@@ -18,13 +18,17 @@ class ViewController: UIViewController {
     var hudView: HUDView?
     var refreshControl = UIRefreshControl()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     let alpha = AlphaVantage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-        textView.setText(text: "Bitcoin Monitor v0.1")
+        textView.setText(text: "Ƀitcoin Monitor v0.1")
         refreshControl.tintColor = UIColor.white.withAlphaComponent(0.5)
         refreshControl.addTarget(self, action: #selector(load), for: UIControlEvents.valueChanged)
         scrollView.refreshControl = refreshControl

@@ -26,7 +26,7 @@ class AlphaVantage {
         task.resume()
     }
     
-    func createURLComp() -> URLComponents {
+    private func createURLComp() -> URLComponents {
         var urlComp = URLComponents()
         urlComp.scheme = "https"
         urlComp.host = "www.alphavantage.co"
@@ -39,7 +39,7 @@ class AlphaVantage {
         return urlComp
     }
     
-    func parseBTCData(data: Data?) -> [(date: String, value: Double)]? {
+    private func parseBTCData(data: Data?) -> [(date: String, value: Double)]? {
         guard let data = data else { return nil }
         do {
             var values: [(String, Double)] = []
@@ -62,7 +62,7 @@ class AlphaVantage {
         }
     }
     
-    func createDates() -> [String] {
+    private func createDates() -> [String] {
         var dates: [String] = []
         let calendar = Calendar.current
         let dateFormatter = DateFormatter()

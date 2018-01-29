@@ -37,7 +37,7 @@ struct GraphModel {
     
     
     
-    func createAxisXData(data: GraphInput) -> AxisData {
+    private func createAxisXData(data: GraphInput) -> AxisData {
         var xdata: AxisData = []
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -56,7 +56,7 @@ struct GraphModel {
         return xdata
     }
     
-    func createAxisYData(data: GraphInput) -> AxisData {
+    private func createAxisYData(data: GraphInput) -> AxisData {
         var ydata: AxisData = []
         
         func getRelativePostion(_ i: Double) -> Double {
@@ -77,7 +77,7 @@ struct GraphModel {
         return ydata
     }
     
-    func createGraphData(data: GraphInput) -> GraphData {
+    private func createGraphData(data: GraphInput) -> GraphData {
         
         var graphData: GraphData = []
         
@@ -93,7 +93,7 @@ struct GraphModel {
         return graphData
     }
     
-    mutating func createHelperVariables(data: GraphInput) {
+    mutating private func createHelperVariables(data: GraphInput) {
         let dataSorted = data.sorted { (first, second) -> Bool in
             return first.value > second.value
         }

@@ -25,7 +25,7 @@ class InteractiveView: UIControl {
     private var is3DTouchAvailable: Bool {
         return traitCollection.forceTouchCapability == .available
     }
-    var nibName = "InteractiveView"
+    private var nibName = "InteractiveView"
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -61,12 +61,6 @@ class InteractiveView: UIControl {
         hudAnimator.startAnimation()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        
-    }
-    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
         if let touch = touches.first {
@@ -80,7 +74,7 @@ class InteractiveView: UIControl {
         blurView.isHidden = true
     }
     
-    func handleTouchesMoved(touch: UITouch) {
+    private func handleTouchesMoved(touch: UITouch) {
         hudContainerView.isHidden = false
         blurView.isHidden = false
         
@@ -101,7 +95,7 @@ class InteractiveView: UIControl {
         
     }
     
-    func loadViewFromNib() -> UIView? {
+    private func loadViewFromNib() -> UIView? {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView

@@ -10,7 +10,7 @@
 		2F0431D7201CE4FD0025E810 /* GraphLayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0431D6201CE4FD0025E810 /* GraphLayerHelper.swift */; };
 		2F0431D9201CEED10025E810 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0431D8201CEED10025E810 /* HUDView.swift */; };
 		2F0431DC201E15670025E810 /* AnimatedLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0431DB201E15670025E810 /* AnimatedLayer.swift */; };
-		2F08FECD201E5C79009FEAE9 /* GradientControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FECC201E5C79009FEAE9 /* GradientControl.swift */; };
+		2F08FECD201E5C79009FEAE9 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FECC201E5C79009FEAE9 /* GradientView.swift */; };
 		2F08FECF201E5FAA009FEAE9 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FECE201E5FAA009FEAE9 /* GraphView.swift */; };
 		2F08FED1201F2B22009FEAE9 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FED0201F2B22009FEAE9 /* TextView.swift */; };
 		2F08FED3201F360C009FEAE9 /* VerticalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FED2201F360C009FEAE9 /* VerticalScrollView.swift */; };
@@ -30,7 +30,7 @@
 		2F0431D6201CE4FD0025E810 /* GraphLayerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphLayerHelper.swift; sourceTree = "<group>"; };
 		2F0431D8201CEED10025E810 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		2F0431DB201E15670025E810 /* AnimatedLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedLayer.swift; sourceTree = "<group>"; };
-		2F08FECC201E5C79009FEAE9 /* GradientControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientControl.swift; sourceTree = "<group>"; };
+		2F08FECC201E5C79009FEAE9 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		2F08FECE201E5FAA009FEAE9 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		2F08FED0201F2B22009FEAE9 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		2F08FED2201F360C009FEAE9 /* VerticalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalScrollView.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				2F0431DB201E15670025E810 /* AnimatedLayer.swift */,
-				2F08FECC201E5C79009FEAE9 /* GradientControl.swift */,
+				2F08FECC201E5C79009FEAE9 /* GradientView.swift */,
 				2F08FED0201F2B22009FEAE9 /* TextView.swift */,
 				2F08FED2201F360C009FEAE9 /* VerticalScrollView.swift */,
 			);
@@ -207,7 +207,7 @@
 			files = (
 				2FD21F72201A5F33002E4FD8 /* ViewController.swift in Sources */,
 				2FD21F87201B7A14002E4FD8 /* InteractiveView.swift in Sources */,
-				2F08FECD201E5C79009FEAE9 /* GradientControl.swift in Sources */,
+				2F08FECD201E5C79009FEAE9 /* GradientView.swift in Sources */,
 				2F08FECF201E5FAA009FEAE9 /* GraphView.swift in Sources */,
 				2F0431D7201CE4FD0025E810 /* GraphLayerHelper.swift in Sources */,
 				2FD21F82201A5F6D002E4FD8 /* AlphaVantage.swift in Sources */,
