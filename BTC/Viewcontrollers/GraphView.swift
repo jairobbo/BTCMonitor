@@ -19,8 +19,6 @@ class GraphView: UIView {
     init(frame: CGRect, model: GraphModel) {
         super.init(frame: frame)
         
-        backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
-        
         self.layerHelper = GraphLayerHelper(bounds: bounds)
 
         graphLayer = layerHelper!.drawGraphLayer(data: model.graphData, lineWidth: 1)
@@ -33,6 +31,12 @@ class GraphView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func startAnimation() {
+        axisXLayer.animate(duration: 0.2)
+        axisYLayer.animate(duration: 0.2)
+        graphLayer.animate(duration: 1)
     }
     
 }

@@ -60,7 +60,6 @@ class AlphaVantage {
             print(error)
             return nil
         }
-        
     }
     
     func createDates() -> [String] {

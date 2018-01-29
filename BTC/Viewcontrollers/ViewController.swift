@@ -10,29 +10,29 @@ import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
     
+    @IBOutlet weak var textView: TextView!
     @IBOutlet weak var interactiveView: InteractiveView!
     
-    let alpha = AlphaVantage()
     var graphView: GraphView?
+    var hudView: HUDView?
+    
+    let alpha = AlphaVantage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        textView.setText(text: "Bitcoin Monitor")
                 
         alpha.getBTCData { (model) in
-            self.interactiveView.model = model
             self.graphView = GraphView(frame: self.interactiveView.bounds, model: model!)
-            self.interactiveView.addSubview(self.graphView!)
-            self.view.addSubview(self.graphView!)
+            self.interactiveView.contentView.addSubview(self.graphView!)
+            self.interactiveView.activityIndicator.stopAnimating()
+            self.hudView = HUDView(frame: self.interactiveView.bounds, model: model!)
+            self.interactiveView.hudViewContainer.addSubview(self.hudView!)
+            self.interactiveView.addTarget(self.hudView, action: #selector(HUDView.interact(control:)), for: .editingChanged)
+            self.graphView?.startAnimation()
         }
-    }
-    
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        interactiveView.activityIndicator.stopAnimating()
-        graphView?.axisXLayer.animate(duration: 0.2)
-        graphView?.axisYLayer.animate(duration: 0.2)
-        graphView?.graphLayer.animate(duration: 1)
     }
 
 }
