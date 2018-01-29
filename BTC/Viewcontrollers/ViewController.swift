@@ -34,8 +34,8 @@ class ViewController: UIViewController {
     
     @objc func load() {
         refreshControl.endRefreshing()
-//        interactiveView.contentView.subviews.first?.removeFromSuperview()
-//        interactiveView.hudViewContainer.subviews.first?.removeFromSuperview()
+        interactiveView.contentView.subviews.first?.removeFromSuperview()
+        interactiveView.hudContainerView.subviews.first?.removeFromSuperview()
         if !interactiveView.activityIndicator.isAnimating {
             interactiveView.activityIndicator.startAnimating()
         }
@@ -49,7 +49,6 @@ class ViewController: UIViewController {
             self.graphView?.startAnimation()
         }
     }
-    
 }
 
 
