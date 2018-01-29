@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextView: GradientControl {
+class TextView: GradientView {
     
     let label = UILabel()
     

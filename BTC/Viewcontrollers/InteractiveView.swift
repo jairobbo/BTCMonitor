@@ -8,70 +8,63 @@
 
 import UIKit
 
-class InteractiveView: GradientControl {
+class InteractiveView: UIControl {
     
-    var contentView = UIView()
-    private var blurView = UIVisualEffectView()
-    var hudViewContainer = UIView()
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var hudContainerView: UIView!
+    @IBOutlet weak var blurView: UIVisualEffectView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var touch: UITouch = UITouch()
     
     private var blurAnimator = UIViewPropertyAnimator()
     private var hudAnimator = UIViewPropertyAnimator()
     
-    let activityIndicator: UIActivityIndicatorView = {
-        let act = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
-        act.hidesWhenStopped = true
-        return act
-    }()
-    
     var inset: CGFloat = 30 // be carefull, also change in DrawLayer!
     
     private var is3DTouchAvailable: Bool {
         return traitCollection.forceTouchCapability == .available
-    } 
+    }
+    var nibName = "InteractiveView"
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        guard let view = loadViewFromNib() else { return }
+        view.frame = self.bounds
+        self.addSubview(view)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        contentView.frame = bounds
-        print(bounds)
-//        contentView.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
-        addSubview(contentView)
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    
+        layer.cornerRadius = 10
+        layer.masksToBounds = true
         
-        activityIndicator.frame = CGRect(x: 0, y: 0, width: bounds.width / 3, height: bounds.width / 3)
-        activityIndicator.center = CGPoint(x: bounds.width/2, y: bounds.height/2)
-        activityIndicator.startAnimating()
-        addSubview(activityIndicator)
-        
-        blurView.frame = bounds
         blurView.effect = nil
         blurView.isHidden = true
-        addSubview(blurView)
         
-        hudViewContainer.frame = bounds
-        print(bounds)
-//        hudViewContainer.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
-        hudViewContainer.alpha = 0
-        addSubview(hudViewContainer)
+        hudContainerView.alpha = 0
         
         blurAnimator = UIViewPropertyAnimator(duration: Double.greatestFiniteMagnitude, curve: .easeOut, animations: {
             self.blurView.effect = UIBlurEffect(style: .regular)
-            self.hudViewContainer.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+            self.hudContainerView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
             self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
         })
         blurAnimator.isInterruptible = true
         
         hudAnimator = UIViewPropertyAnimator(duration: Double.greatestFiniteMagnitude, curve: .easeIn, animations: {
-            self.hudViewContainer.alpha = 1
+            self.hudContainerView.alpha = 1
         })
         hudAnimator.isInterruptible = true
         
         blurAnimator.startAnimation()
         hudAnimator.startAnimation()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -83,12 +76,12 @@ class InteractiveView: GradientControl {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        hudViewContainer.isHidden = true
+        hudContainerView.isHidden = true
         blurView.isHidden = true
     }
     
     func handleTouchesMoved(touch: UITouch) {
-        hudViewContainer.isHidden = false
+        hudContainerView.isHidden = false
         blurView.isHidden = false
         
         if is3DTouchAvailable {
@@ -98,7 +91,7 @@ class InteractiveView: GradientControl {
             blurAnimator.fractionComplete = (force / maximumForce)
             hudAnimator.fractionComplete = (force / maximumForce) * 5
         } else {
-            hudViewContainer.alpha = 1
+            hudContainerView.alpha = 1
             blurView.effect = UIBlurEffect(style: .regular)
         }
         
@@ -106,6 +99,12 @@ class InteractiveView: GradientControl {
         
         sendActions(for: .editingChanged)
         
+    }
+    
+    func loadViewFromNib() -> UIView? {
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
 }

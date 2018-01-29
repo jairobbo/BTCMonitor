@@ -34,8 +34,8 @@ class ViewController: UIViewController {
     
     @objc func load() {
         refreshControl.endRefreshing()
-        interactiveView.contentView.subviews.first?.removeFromSuperview()
-        interactiveView.hudViewContainer.subviews.first?.removeFromSuperview()
+//        interactiveView.contentView.subviews.first?.removeFromSuperview()
+//        interactiveView.hudViewContainer.subviews.first?.removeFromSuperview()
         if !interactiveView.activityIndicator.isAnimating {
             interactiveView.activityIndicator.startAnimating()
         }
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
             self.interactiveView.contentView.addSubview(self.graphView!)
             self.interactiveView.activityIndicator.stopAnimating()
             self.hudView = HUDView(frame: self.interactiveView.bounds, model: model!)
-            self.interactiveView.hudViewContainer.addSubview(self.hudView!)
+            self.interactiveView.hudContainerView.addSubview(self.hudView!)
             self.interactiveView.addTarget(self.hudView, action: #selector(HUDView.interact(control:)), for: .editingChanged)
             self.graphView?.startAnimation()
         }
