@@ -2,7 +2,7 @@
 //  TextView.swift
 //  BTC
 //
-//  Created by Lise-Lotte Geutjes on 29-01-18.
+//  Created by Jairo Bambang Oetomo on 29-01-18.
 //  Copyright © 2018 DramaMedia. All rights reserved.
 //
 

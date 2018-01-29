@@ -2,7 +2,7 @@
 //  Model.swift
 //  BTC
 //
-//  Created by Lise-Lotte Geutjes on 26-01-18.
+//  Created by Jairo Bambang Oetomo on 26-01-18.
 //  Copyright © 2018 DramaMedia. All rights reserved.
 //
 
