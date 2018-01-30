@@ -9,6 +9,7 @@
 import UIKit
 
 class ContainerView: UIView, Animations {
+    @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var container: UIView!
     
     let nibName = "ContainerView"
