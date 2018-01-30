@@ -120,6 +120,8 @@ class ViewController: UIViewController {
         refreshControl.endRefreshing()
         hudView?.removeFromSuperview()
         graphView?.removeFromSuperview()
+        btcLowContainer.container.subviews.first?.removeFromSuperview()
+        btcHighContainer.container.subviews.first?.removeFromSuperview()
         if !interactiveView.activityIndicator.isAnimating {
             interactiveView.activityIndicator.startAnimating()
         }
@@ -149,7 +151,6 @@ class ViewController: UIViewController {
     }
     
     func getValue(_ value: Value, model: GraphModel) -> String {
-        
         let sorted = model.rawData.sorted { (left, right) -> Bool in
             left.value > right.value
         }
@@ -162,7 +163,6 @@ class ViewController: UIViewController {
         case .low:
             return numberFormatter.string(from: NSNumber(value: sorted.last?.value ?? 0)) ?? ""
         }
-        
     }
 }
 
