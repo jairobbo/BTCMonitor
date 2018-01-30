@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InteractiveView: UIControl {
+class InteractiveView: UIControl, Animations {
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var hudContainerView: UIView!
@@ -37,7 +37,7 @@ class InteractiveView: UIControl {
     override func awakeFromNib() {
         super.awakeFromNib()
     
-        layer.cornerRadius = 10
+        layer.cornerRadius = 20
         layer.masksToBounds = true
         
         blurView.effect = nil
@@ -48,7 +48,7 @@ class InteractiveView: UIControl {
         blurAnimator = UIViewPropertyAnimator(duration: Double.greatestFiniteMagnitude, curve: .easeOut, animations: {
             self.blurView.effect = UIBlurEffect(style: .regular)
             self.hudContainerView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+//            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
         })
         blurAnimator.isInterruptible = true
         
@@ -61,6 +61,9 @@ class InteractiveView: UIControl {
         blurAnimator.pauseAnimation()
         hudAnimator.startAnimation()
         hudAnimator.pauseAnimation()
+        
+        self.alpha = 0
+        self.transform = CGAffineTransform(scaleX: 0, y: 0)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

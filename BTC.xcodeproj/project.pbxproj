@@ -12,7 +12,7 @@
 		2F0431DC201E15670025E810 /* AnimatedLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0431DB201E15670025E810 /* AnimatedLayer.swift */; };
 		2F08FECD201E5C79009FEAE9 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FECC201E5C79009FEAE9 /* GradientView.swift */; };
 		2F08FECF201E5FAA009FEAE9 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FECE201E5FAA009FEAE9 /* GraphView.swift */; };
-		2F08FED1201F2B22009FEAE9 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FED0201F2B22009FEAE9 /* TextView.swift */; };
+		2F08FED1201F2B22009FEAE9 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FED0201F2B22009FEAE9 /* ContainerView.swift */; };
 		2F08FED3201F360C009FEAE9 /* VerticalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08FED2201F360C009FEAE9 /* VerticalScrollView.swift */; };
 		2F08FED5201F4F1A009FEAE9 /* InteractiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F08FED4201F4F1A009FEAE9 /* InteractiveView.xib */; };
 		2FD21F70201A5F33002E4FD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F6F201A5F33002E4FD8 /* AppDelegate.swift */; };
@@ -24,6 +24,8 @@
 		2FD21F84201A6223002E4FD8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F83201A6223002E4FD8 /* TableViewController.swift */; };
 		2FD21F87201B7A14002E4FD8 /* InteractiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F86201B7A14002E4FD8 /* InteractiveView.swift */; };
 		2FD21F8A201B7F17002E4FD8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F89201B7F17002E4FD8 /* Model.swift */; };
+		4192EE162020B5B9004DA7EC /* ContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4192EE152020B5B9004DA7EC /* ContainerView.xib */; };
+		4192EE192020B644004DA7EC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4192EE182020B644004DA7EC /* Protocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +34,7 @@
 		2F0431DB201E15670025E810 /* AnimatedLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedLayer.swift; sourceTree = "<group>"; };
 		2F08FECC201E5C79009FEAE9 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		2F08FECE201E5FAA009FEAE9 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
-		2F08FED0201F2B22009FEAE9 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		2F08FED0201F2B22009FEAE9 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		2F08FED2201F360C009FEAE9 /* VerticalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalScrollView.swift; sourceTree = "<group>"; };
 		2F08FED4201F4F1A009FEAE9 /* InteractiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InteractiveView.xib; sourceTree = "<group>"; };
 		2FD21F6C201A5F33002E4FD8 /* BTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +48,8 @@
 		2FD21F83201A6223002E4FD8 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		2FD21F86201B7A14002E4FD8 /* InteractiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveView.swift; sourceTree = "<group>"; };
 		2FD21F89201B7F17002E4FD8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		4192EE152020B5B9004DA7EC /* ContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContainerView.xib; sourceTree = "<group>"; };
+		4192EE182020B644004DA7EC /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +68,11 @@
 			children = (
 				2F0431DB201E15670025E810 /* AnimatedLayer.swift */,
 				2F08FECC201E5C79009FEAE9 /* GradientView.swift */,
-				2F08FED0201F2B22009FEAE9 /* TextView.swift */,
+				2F08FED0201F2B22009FEAE9 /* ContainerView.swift */,
+				4192EE152020B5B9004DA7EC /* ContainerView.xib */,
 				2F08FED2201F360C009FEAE9 /* VerticalScrollView.swift */,
+				2F08FECE201E5FAA009FEAE9 /* GraphView.swift */,
+				2F0431D8201CEED10025E810 /* HUDView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -89,6 +96,7 @@
 		2FD21F6E201A5F33002E4FD8 /* BTC */ = {
 			isa = PBXGroup;
 			children = (
+				4192EE172020B62B004DA7EC /* Protocols */,
 				2F0431DA201E15460025E810 /* View */,
 				2FD21F8B201BA958002E4FD8 /* Network */,
 				2FD21F88201B7EF9002E4FD8 /* Model */,
@@ -108,8 +116,6 @@
 			children = (
 				2FD21F86201B7A14002E4FD8 /* InteractiveView.swift */,
 				2F08FED4201F4F1A009FEAE9 /* InteractiveView.xib */,
-				2F0431D8201CEED10025E810 /* HUDView.swift */,
-				2F08FECE201E5FAA009FEAE9 /* GraphView.swift */,
 				2FD21F71201A5F33002E4FD8 /* ViewController.swift */,
 			);
 			path = Viewcontrollers;
@@ -130,6 +136,15 @@
 				2FD21F81201A5F6D002E4FD8 /* AlphaVantage.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		4192EE172020B62B004DA7EC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4192EE182020B644004DA7EC /* Protocols.swift */,
+			);
+			name = Protocols;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FD21F7A201A5F33002E4FD8 /* LaunchScreen.storyboard in Resources */,
+				4192EE162020B5B9004DA7EC /* ContainerView.xib in Resources */,
 				2F08FED5201F4F1A009FEAE9 /* InteractiveView.xib in Resources */,
 				2FD21F77201A5F33002E4FD8 /* Assets.xcassets in Resources */,
 				2FD21F75201A5F33002E4FD8 /* Main.storyboard in Resources */,
@@ -214,7 +230,8 @@
 				2F0431DC201E15670025E810 /* AnimatedLayer.swift in Sources */,
 				2F0431D9201CEED10025E810 /* HUDView.swift in Sources */,
 				2FD21F8A201B7F17002E4FD8 /* Model.swift in Sources */,
-				2F08FED1201F2B22009FEAE9 /* TextView.swift in Sources */,
+				4192EE192020B644004DA7EC /* Protocols.swift in Sources */,
+				2F08FED1201F2B22009FEAE9 /* ContainerView.swift in Sources */,
 				2FD21F70201A5F33002E4FD8 /* AppDelegate.swift in Sources */,
 				2F08FED3201F360C009FEAE9 /* VerticalScrollView.swift in Sources */,
 				2FD21F84201A6223002E4FD8 /* TableViewController.swift in Sources */,
