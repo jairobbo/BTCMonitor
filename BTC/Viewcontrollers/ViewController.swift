@@ -13,10 +13,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var textView: ContainerView!
     @IBOutlet weak var interactiveView: InteractiveView!
     @IBOutlet weak var scrollView: VerticalScrollView!
+    @IBOutlet weak var btcLowContainer: ContainerView!
+    @IBOutlet weak var btcHighContainer: ContainerView!
+    
+    
     @IBOutlet weak var titleBoxHeight: NSLayoutConstraint!
     @IBOutlet weak var titleBoxWidth: NSLayoutConstraint!
     @IBOutlet weak var graphBoxHeight: NSLayoutConstraint!
     @IBOutlet weak var grapBoxWidth: NSLayoutConstraint!
+    @IBOutlet weak var lowBoxWidth: NSLayoutConstraint!
+    @IBOutlet weak var lowBoxHeight: NSLayoutConstraint!
+    @IBOutlet weak var highBoxWidth: NSLayoutConstraint!
+    @IBOutlet weak var highBoxHeight: NSLayoutConstraint!
+    
     
     var graphView: GraphView?
     var hudView: HUDView?
@@ -42,42 +51,71 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        let contentWidth = self.view.bounds.width - CGFloat(40)
+        let boxHelper = BoxLayerHelper()
+        let margin: CGFloat = 20
+        let contentWidth = self.view.bounds.width - 2 * margin
+        let contentWidthHalf = (self.view.bounds.width - 3 * margin) / 2
         let initialDelay: TimeInterval = 2
+        let plopDuration: TimeInterval = 0.6
+        let frameAnimationDelay: TimeInterval = 1.5
         
-        textView.animateBirth(duration: 0.6, delay: initialDelay, completion: nil)
-        interactiveView.animateBirth(
-            duration: 0.6,
-            delay: 0.6 + initialDelay,
-            completion: nil)
+        textView.animateBirth(duration: plopDuration, delay: initialDelay, completion: nil)
+        interactiveView.animateBirth(duration: plopDuration, delay: 0.3 + initialDelay, completion: nil)
+        btcLowContainer.animateBirth(duration: plopDuration, delay: 0.6 + initialDelay, completion: nil)
+        btcHighContainer.animateBirth(duration: plopDuration, delay: 0.9 + initialDelay, completion: nil)
         self.textView.animateConstraints(
             duration: 0.8,
-            delay: 1 + initialDelay,
-            view: self.view,
-            widthCstr: self.titleBoxWidth,
+            delay: frameAnimationDelay + initialDelay,
+            view: view,
+            widthCstr: titleBoxWidth,
             width: contentWidth,
-            heightCstr: self.titleBoxHeight,
+            heightCstr: titleBoxHeight,
             height: 56, completion: {finished in
-                let titleLayer = AnimatedLayer()
+                let titleLayer = boxHelper.createTitleLayer(text: "Bitcoin monitor v0.1")
+                let view = UIView(frame: self.textView.container.bounds)
+                view.transform = CGAffineTransform(translationX: 10, y: 5)
+                view.layer.addSublayer(titleLayer)
+                self.textView.container.addSubview(view)
                 titleLayer.animate(duration: 0.3)
         })
         self.interactiveView.animateConstraints(
             duration: 0.8,
-            delay: 1.2 + initialDelay,
+            delay: 0.1 + frameAnimationDelay + initialDelay,
             view: self.view,
             widthCstr: grapBoxWidth,
             width: contentWidth,
             heightCstr: graphBoxHeight,
             height: 250,
-            completion: {finished in
-            self.load()
-        })
+            completion: {finished in self.load()}
+        )
+        self.btcLowContainer.animateConstraints(
+            duration: 0.8,
+            delay: 0.2 + frameAnimationDelay + initialDelay,
+            view: self.view,
+            widthCstr: lowBoxWidth,
+            width: contentWidthHalf,
+            heightCstr: lowBoxHeight,
+            height: 56,
+            completion: nil
+        )
+        self.btcHighContainer.animateConstraints(
+            duration: 0.8,
+            delay: 0.3 + frameAnimationDelay + initialDelay,
+            view: self.view,
+            widthCstr: highBoxWidth,
+            width: contentWidthHalf,
+            heightCstr: highBoxHeight,
+            height: 56,
+            completion: nil)
     }
     
     @objc func load() {
         refreshControl.endRefreshing()
-        interactiveView.contentView.subviews.first?.removeFromSuperview()
-        interactiveView.hudContainerView.subviews.first?.removeFromSuperview()
+        for subView in interactiveView.contentView.subviews {
+            subView.removeFromSuperview()
+        }
+        hudView?.removeFromSuperview()
+        graphView?.removeFromSuperview()
         if !interactiveView.activityIndicator.isAnimating {
             interactiveView.activityIndicator.startAnimating()
         }

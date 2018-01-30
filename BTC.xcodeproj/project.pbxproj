@@ -26,6 +26,7 @@
 		2FD21F8A201B7F17002E4FD8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F89201B7F17002E4FD8 /* Model.swift */; };
 		4192EE162020B5B9004DA7EC /* ContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4192EE152020B5B9004DA7EC /* ContainerView.xib */; };
 		4192EE192020B644004DA7EC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4192EE182020B644004DA7EC /* Protocols.swift */; };
+		4192EE1B2020C757004DA7EC /* BoxLayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4192EE1A2020C757004DA7EC /* BoxLayerHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		2FD21F89201B7F17002E4FD8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4192EE152020B5B9004DA7EC /* ContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContainerView.xib; sourceTree = "<group>"; };
 		4192EE182020B644004DA7EC /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		4192EE1A2020C757004DA7EC /* BoxLayerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxLayerHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,8 @@
 		2F0431DA201E15460025E810 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2FD21F86201B7A14002E4FD8 /* InteractiveView.swift */,
+				2F08FED4201F4F1A009FEAE9 /* InteractiveView.xib */,
 				2F0431DB201E15670025E810 /* AnimatedLayer.swift */,
 				2F08FECC201E5C79009FEAE9 /* GradientView.swift */,
 				2F08FED0201F2B22009FEAE9 /* ContainerView.swift */,
@@ -114,8 +118,6 @@
 		2FD21F85201B79FD002E4FD8 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				2FD21F86201B7A14002E4FD8 /* InteractiveView.swift */,
-				2F08FED4201F4F1A009FEAE9 /* InteractiveView.xib */,
 				2FD21F71201A5F33002E4FD8 /* ViewController.swift */,
 			);
 			path = Viewcontrollers;
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				2F0431D6201CE4FD0025E810 /* GraphLayerHelper.swift */,
+				4192EE1A2020C757004DA7EC /* BoxLayerHelper.swift */,
 				2FD21F89201B7F17002E4FD8 /* Model.swift */,
 			);
 			path = Model;
@@ -233,6 +236,7 @@
 				4192EE192020B644004DA7EC /* Protocols.swift in Sources */,
 				2F08FED1201F2B22009FEAE9 /* ContainerView.swift in Sources */,
 				2FD21F70201A5F33002E4FD8 /* AppDelegate.swift in Sources */,
+				4192EE1B2020C757004DA7EC /* BoxLayerHelper.swift in Sources */,
 				2F08FED3201F360C009FEAE9 /* VerticalScrollView.swift in Sources */,
 				2FD21F84201A6223002E4FD8 /* TableViewController.swift in Sources */,
 			);

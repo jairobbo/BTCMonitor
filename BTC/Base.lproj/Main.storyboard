@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3i-7T-ycc" customClass="VerticalScrollView" customModule="BTC" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGl-mG-IO2" customClass="InteractiveView" customModule="BTC" customModuleProvider="target">
                                         <rect key="frame" x="20" y="96" width="40" height="40"/>
@@ -33,15 +38,60 @@
                                             <constraint firstAttribute="width" constant="40" id="5xk-13-ZF5"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RpX-da-dhk">
+                                        <rect key="frame" x="0.0" y="366" width="375" height="56"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01E-h4-bdq">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="56"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJa-EP-5o6" customClass="ContainerView" customModule="BTC" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="0.0" width="40" height="40"/>
+                                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="blL-gi-xQ9"/>
+                                                            <constraint firstAttribute="height" constant="40" id="et3-Ys-54B"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="jJa-EP-5o6" firstAttribute="leading" secondItem="01E-h4-bdq" secondAttribute="leading" constant="20" id="O81-Ra-hOe"/>
+                                                    <constraint firstItem="jJa-EP-5o6" firstAttribute="top" secondItem="01E-h4-bdq" secondAttribute="top" id="rlJ-re-jd5"/>
+                                                    <constraint firstAttribute="height" constant="56" id="wMj-Ch-vcU"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozl-8v-Zhx">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="56"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GS7-xk-A3i" customClass="ContainerView" customModule="BTC" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="0.0" width="40" height="40"/>
+                                                        <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="aqO-Tw-Pu3"/>
+                                                            <constraint firstAttribute="height" constant="40" id="tdN-no-cfa"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="GS7-xk-A3i" firstAttribute="top" secondItem="ozl-8v-Zhx" secondAttribute="top" id="HLj-6A-cHy"/>
+                                                    <constraint firstItem="GS7-xk-A3i" firstAttribute="leading" secondItem="ozl-8v-Zhx" secondAttribute="leading" constant="10" id="mZW-Ku-TZp"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ozl-8v-Zhx" firstAttribute="width" secondItem="RpX-da-dhk" secondAttribute="width" multiplier="0.5" id="320-Ir-192"/>
+                                            <constraint firstItem="01E-h4-bdq" firstAttribute="width" secondItem="RpX-da-dhk" secondAttribute="width" multiplier="0.5" id="OeQ-7K-DJr"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="RpX-da-dhk" secondAttribute="bottom" priority="1" constant="231" id="2aT-FC-IHz"/>
                                     <constraint firstItem="kGl-mG-IO2" firstAttribute="leading" secondItem="e3i-7T-ycc" secondAttribute="leading" constant="20" id="4r4-C4-7nT"/>
                                     <constraint firstAttribute="trailing" secondItem="kGl-mG-IO2" secondAttribute="trailing" priority="1" constant="20" id="AUk-kF-sh0"/>
                                     <constraint firstItem="kGl-mG-IO2" firstAttribute="top" secondItem="e3i-7T-ycc" secondAttribute="top" constant="96" id="Bex-7d-AS6"/>
                                     <constraint firstItem="ILr-uK-7z6" firstAttribute="top" secondItem="e3i-7T-ycc" secondAttribute="top" constant="20" id="KeP-W5-frq"/>
                                     <constraint firstAttribute="trailing" secondItem="ILr-uK-7z6" secondAttribute="trailing" priority="1" constant="20" id="TU3-sc-MXU"/>
                                     <constraint firstItem="ILr-uK-7z6" firstAttribute="leading" secondItem="e3i-7T-ycc" secondAttribute="leading" constant="20" id="kHa-sX-3hB"/>
-                                    <constraint firstAttribute="bottom" secondItem="kGl-mG-IO2" secondAttribute="bottom" priority="1" constant="144.5" id="uFV-vd-on4"/>
+                                    <constraint firstItem="RpX-da-dhk" firstAttribute="top" secondItem="e3i-7T-ycc" secondAttribute="top" constant="366" id="sqg-Sx-OXO"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -49,16 +99,24 @@
                         <constraints>
                             <constraint firstItem="e3i-7T-ycc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DrO-t7-i3H"/>
                             <constraint firstItem="e3i-7T-ycc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="YaJ-Xv-HE3"/>
+                            <constraint firstItem="RpX-da-dhk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="btH-7y-da7"/>
                             <constraint firstAttribute="trailing" secondItem="e3i-7T-ycc" secondAttribute="trailing" id="e4a-Hg-VO2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e3i-7T-ycc" secondAttribute="bottom" id="lAj-Hb-xLA"/>
+                            <constraint firstItem="RpX-da-dhk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rez-T3-3Wk"/>
                             <constraint firstItem="e3i-7T-ycc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="y2k-dX-wmM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="btcHighContainer" destination="GS7-xk-A3i" id="wlM-1o-KjL"/>
+                        <outlet property="btcLowContainer" destination="jJa-EP-5o6" id="c2V-1Z-fJr"/>
                         <outlet property="grapBoxWidth" destination="05F-sV-6U3" id="EEA-52-gTp"/>
                         <outlet property="graphBoxHeight" destination="GEC-LJ-4yo" id="f3h-YJ-QKZ"/>
+                        <outlet property="highBoxHeight" destination="tdN-no-cfa" id="ltZ-vr-CnS"/>
+                        <outlet property="highBoxWidth" destination="aqO-Tw-Pu3" id="0r9-ya-8pD"/>
                         <outlet property="interactiveView" destination="kGl-mG-IO2" id="c7j-zH-HGl"/>
+                        <outlet property="lowBoxHeight" destination="et3-Ys-54B" id="Qe5-mp-t1K"/>
+                        <outlet property="lowBoxWidth" destination="blL-gi-xQ9" id="1fF-Vd-Yce"/>
                         <outlet property="scrollView" destination="e3i-7T-ycc" id="lb6-JB-kkx"/>
                         <outlet property="textView" destination="ILr-uK-7z6" id="qcJ-NY-MTk"/>
                         <outlet property="titleBoxHeight" destination="25O-Cx-N7n" id="5fL-Vt-zl0"/>
@@ -74,7 +132,7 @@
             <objects>
                 <tableViewController id="rvg-BH-RCK" customClass="TableViewController" customModule="BTC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="83S-NN-yWD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <connections>

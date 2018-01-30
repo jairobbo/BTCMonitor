@@ -25,7 +25,6 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQc-kM-VAH" customClass="GradientView" customModule="BTC" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="326" height="240"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGj-5y-1sH">
                     <rect key="frame" x="0.0" y="0.0" width="326" height="240"/>

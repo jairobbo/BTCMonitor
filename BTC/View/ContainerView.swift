@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ContainerView: GradientView, Animations {
+class ContainerView: UIView, Animations {
+    @IBOutlet weak var container: UIView!
     
     let nibName = "ContainerView"
     let label = UILabel()
@@ -18,6 +19,8 @@ class ContainerView: GradientView, Animations {
         guard let view = viewFromNib() else { return }
         view.frame = self.bounds
         addSubview(view)
+        layer.cornerRadius = 20
+        layer.masksToBounds = true
     }
     
     override func awakeFromNib() {

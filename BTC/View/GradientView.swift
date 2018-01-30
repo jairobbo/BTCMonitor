@@ -17,17 +17,15 @@ class GradientView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        gradientLayer.frame = bounds.insetBy(dx: -100, dy: -100)
+        gradientLayer.frame = bounds
         gradientLayer.colors = [gradientColor1.cgColor, gradientColor2.cgColor]
         layer.addSublayer(gradientLayer)
         
-        layer.cornerRadius = 20
-        layer.masksToBounds = true
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        gradientLayer.frame = bounds.insetBy(dx: -100, dy: -100)
+        gradientLayer.frame = bounds.insetBy(dx: -20, dy: -20)
     }
     
 }

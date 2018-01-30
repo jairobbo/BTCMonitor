@@ -12,7 +12,7 @@ import UIKit
 
 
 @objc protocol Animations {
-    @objc optional func animateBirth(duration: TimeInterval, completion: ((Bool)->Void)? )
+    @objc optional func animateBirth(duration: TimeInterval, delay: TimeInterval, completion: ((Bool)->Void)? )
 }
 
 extension Animations where Self:UIView {
@@ -27,7 +27,7 @@ extension Animations where Self:UIView {
         view.updateConstraintsIfNeeded()
         widthCstr.constant = width
         heightCstr.constant = height
-        UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+        UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.25, options: [], animations: {
             view.layoutIfNeeded()
         }, completion: completion)
     }
