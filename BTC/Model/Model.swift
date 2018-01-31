@@ -63,9 +63,8 @@ struct GraphModel {
             if i < minGraphValue || i > maxGraphValue {
             return -1
             }
-            return (i - minGraphValue)/range
+            return (i - minGraphValue)/(maxGraphValue - minGraphValue)
         }
-        
         var i: Double = Double(Int(minGraphValue/Double(unit)) * unit)
         while i <= Double(Int(maxGraphValue/Double(unit)) * unit) {
             let position = getRelativePostion(i)
